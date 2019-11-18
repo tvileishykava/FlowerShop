@@ -15,6 +15,8 @@ namespace FlowerShop
         void AddFlowerToFlowerCollection(Flower flower);
         void DeleteFlowerFromFlowerCollection(Flower flower);
         void DisplayFlowerNamesAndPriceAndQuantity();
+        //void Sort(); - 
+        //Flower FindByName(string name);
     }
         //class
     class FlowerSet : IFlowerSet
@@ -74,6 +76,7 @@ namespace FlowerShop
             }
             
         }
+
 
     }
 }

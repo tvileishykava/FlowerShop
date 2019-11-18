@@ -15,6 +15,7 @@ namespace FlowerShop
     //class
     public abstract class Flower : IFlower
     {
+        protected int maxCount;
         protected string flowername;
         public double price;
         public int quantity;

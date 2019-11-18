@@ -10,6 +10,7 @@ namespace FlowerShop.Flowers
     { 
         public Rose(string flowername, double price, int quantity, int flowerlength=25) : base(flowername, price, quantity)
         {
+            maxCount = 10;
             flowerlength_ = flowerlength;
         }
         //what for is it?
