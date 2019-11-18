@@ -1,0 +1,7 @@
+C:\Users\Tatsiana\source\repos\FlowerShop\FlowerShop\obj\Debug\FlowerShop.csprojAssemblyReference.cache
+C:\Users\Tatsiana\source\repos\FlowerShop\FlowerShop\obj\Debug\FlowerShop.csproj.CoreCompileInputs.cache
+C:\Users\Tatsiana\source\repos\FlowerShop\FlowerShop\bin\Debug\FlowerShop.exe.config
+C:\Users\Tatsiana\source\repos\FlowerShop\FlowerShop\bin\Debug\FlowerShop.exe
+C:\Users\Tatsiana\source\repos\FlowerShop\FlowerShop\bin\Debug\FlowerShop.pdb
+C:\Users\Tatsiana\source\repos\FlowerShop\FlowerShop\obj\Debug\FlowerShop.exe
+C:\Users\Tatsiana\source\repos\FlowerShop\FlowerShop\obj\Debug\FlowerShop.pdb
