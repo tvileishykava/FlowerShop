@@ -8,12 +8,12 @@ namespace FlowerShop.Flowers
 {
     class Rose : Flower
     { 
-        public Rose(string flowername, double price, int quantity, int flowerlength) : base(flowername, price, quantity)
+        public Rose(string flowername, double price, int quantity, int flowerlength=25) : base(flowername, price, quantity)
         {
             flowerlength_ = flowerlength;
         }
         //what for is it?
-        int flowerlength_;
+        public int flowerlength_;
         //method
         public override void DisplayFlower()
         {

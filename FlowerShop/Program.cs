@@ -19,19 +19,25 @@ namespace FlowerShop
 
 
             Rose Rose1 = new Rose("Rose", 3.00, 10, 30);
+            Rose Rose2 = new Rose("Rose", 3.00, 10);
             Rose1.DisplayFlower();
 
 
+            FlowerSet FlowerSet1 = new FlowerSet();
+            FlowerSet1.AddFlowerToFlowerCollection(Astra1);
+            FlowerSet1.AddFlowerToFlowerCollection(Rose1);
 
-            List<string> FlowerColl= new List<string>();
-  //          Astra1.AddFlowerToFlowerCollection();
-            //FlowerCollection.Add(Astra1);
-            //FlowerCollection.Add(Rose1);
-            //foreach (Flower i in ss)
-            //{
-            //Console.WriteLine(i);
+            FlowerSet1.DisplayFlowerNamesAndPriceAndQuantity();
+            FlowerSet1.DeleteFlowerFromFlowerCollection(Rose1);
+            FlowerSet1.DisplayTotalPrice();
+            Console.WriteLine("___________");
+            FlowerSet1.DisplayFlowerNamesAndPriceAndQuantity();
+            FlowerSet1.DisplayTotalPrice();
+            FlowerSet1.DisplayTotalPrice(20);
 
-            //}
+
+
+
             //do not delete, useful line
             Console.ReadLine();
              

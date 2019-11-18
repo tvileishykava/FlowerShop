@@ -12,3 +12,10 @@ D:\projects_c#\FlowerShop\FlowerShop\obj\Debug\FlowerShop.pdb
 D:\projects_c#\FlowerShop\FlowerShop\bin\Debug\FlowerShop.exe.config
 D:\projects_c#\FlowerShop\FlowerShop\bin\Debug\FlowerShop.exe
 D:\projects_c#\FlowerShop\FlowerShop\bin\Debug\FlowerShop.pdb
+E:\!!! c# repos\FlowerShop\FlowerShop\bin\Debug\FlowerShop.exe.config
+E:\!!! c# repos\FlowerShop\FlowerShop\bin\Debug\FlowerShop.exe
+E:\!!! c# repos\FlowerShop\FlowerShop\bin\Debug\FlowerShop.pdb
+E:\!!! c# repos\FlowerShop\FlowerShop\obj\Debug\FlowerShop.csprojAssemblyReference.cache
+E:\!!! c# repos\FlowerShop\FlowerShop\obj\Debug\FlowerShop.csproj.CoreCompileInputs.cache
+E:\!!! c# repos\FlowerShop\FlowerShop\obj\Debug\FlowerShop.exe
+E:\!!! c# repos\FlowerShop\FlowerShop\obj\Debug\FlowerShop.pdb

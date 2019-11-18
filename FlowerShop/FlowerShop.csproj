@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Flower.cs" />
-    <Compile Include="Flowershop1.cs" />
+    <Compile Include="FlowerSet.cs" />
     <Compile Include="Flowers\Astra.cs" />
     <Compile Include="Flowers\Rose.cs" />
     <Compile Include="Flowers\Tulip.cs" />

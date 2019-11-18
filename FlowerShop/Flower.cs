@@ -28,9 +28,7 @@ namespace FlowerShop
         {
             this.flowername = flowername; this.price = price; this.quantity = quantity;
         }
-
-
-
+        
         //methods
         public virtual void DisplayFlower()
         {
