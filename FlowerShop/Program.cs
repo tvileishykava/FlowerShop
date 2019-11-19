@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FlowerShop.Flowers;
+using FlowerShop.Menu;
 
 
 
@@ -14,12 +15,12 @@ namespace FlowerShop
         static void Main(string[] args)
         {
             //new flower
-            Astra Astra1 = new Astra("Astra", 3.00, 10);
+            Astra Astra1 = new Astra("Astra", 3.00);
             Astra1.DisplayFlower();
 
 
-            Rose Rose1 = new Rose("Rose", 3.00, 10, 30);
-            Rose Rose2 = new Rose("Rose", 3.00, 10);
+            Rose Rose1 = new Rose("Rose", 3.00, 30);
+            Rose Rose2 = new Rose("Rose", 3.00);
             Rose1.DisplayFlower();
 
 
@@ -34,6 +35,7 @@ namespace FlowerShop
             FlowerSet1.DisplayFlowerNamesAndPriceAndQuantity();
             FlowerSet1.DisplayTotalPrice();
             FlowerSet1.DisplayTotalPrice(20);
+            ShowMainMenu();
 
 
 

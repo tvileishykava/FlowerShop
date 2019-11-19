@@ -11,7 +11,9 @@ namespace FlowerShop
     public interface IFlowerSet
     {
         void DisplayTotalPrice();
+        //rework
         void DisplayTotalPrice(double pack);
+        //rework
         void AddFlowerToFlowerCollection(Flower flower);
         void DeleteFlowerFromFlowerCollection(Flower flower);
         void DisplayFlowerNamesAndPriceAndQuantity();
@@ -66,11 +68,11 @@ namespace FlowerShop
                 string info = "";
                 if (i.GetType() == typeof(Rose))
                 {
-                    info = "| " + i.Flowername + " | " + (i as Rose).flowerlength_ + " sm " + "| price: " + i.price + " BYN" + " | " + i.quantity + " items| " ;
+                    info = "| " + i.Flowername + " | " + (i as Rose).flowerlength_ + " sm " + "| price: " + i.price + " BYN" + " | " ;
                 }
                 else
                 {
-                    info = "| " + i.Flowername + " | price: " + i.price + " BYN" + " | " + i.quantity + " items| ";
+                    info = "| " + i.Flowername + " | price: " + i.price + " BYN" + " | ";
                 } 
                 Console.WriteLine(info);
             }

@@ -8,6 +8,6 @@ namespace FlowerShop.Flowers
 {
     class Tulip : Flower
     {
-        public Tulip(string flowername, double price, int quantity) : base(flowername, price, quantity) { maxCount = 10;  }
+        public Tulip(string flowername, double price) : base(flowername, price) {}
     }
 }

@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace FlowerShop
-    ///checkconnectioon
-{
+    {
     //interface
     public interface IFlower
     {
@@ -16,19 +15,17 @@ namespace FlowerShop
     //class
     public abstract class Flower : IFlower
     {
-        protected int maxCount;
         protected string flowername;
         public double price;
-        public int quantity;
         public string Flowername
         {
             get { return flowername; }
             set { flowername = value; }
         }
         //constructor
-        public Flower(string flowername, double price, int quantity)
+        public Flower(string flowername, double price)
         {
-            this.flowername = flowername; this.price = price; this.quantity = quantity;
+            this.flowername = flowername; this.price = price;
         }
         
         //methods
