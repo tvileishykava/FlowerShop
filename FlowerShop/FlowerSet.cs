@@ -14,8 +14,8 @@ namespace FlowerShop
         //rework
         void DisplayTotalPrice(double pack);
         //rework
-        void AddFlowerToFlowerCollection(Flower flower);
-        void DeleteFlowerFromFlowerCollection(Flower flower);
+        void AddFlowerToFlowerCollection(string className, int count, string flowername, double price, int flowerlength);
+        void DeleteFlowerFromFlowerCollection(string flower, int count);
         void DisplayFlowerNamesAndPriceAndQuantity();
         //void Sort(); - 
         //Flower FindByName(string name);
@@ -52,13 +52,49 @@ namespace FlowerShop
             double resultwithpack = result + pack;
             Console.WriteLine("FlowerSet price with pack: " + resultwithpack);
         }
-        public void AddFlowerToFlowerCollection(Flower flower)
+        public void AddFlowerToFlowerCollection(string className, int count, string flowername, double price, int flowerlength = 25)
         {
-            this.FlowerCollection.Add(flower);
+            Flower fl;
+
+            for (int i = 0; i < count; i++)
+            {
+                switch (className)
+                {
+                    case "Astra":
+                        fl = new Astra(flowername, price);
+                        break;
+                    case "Rose":
+                        fl = new Rose(flowername, price, flowerlength);
+                        break;
+                    case "Tulip":
+                        fl = new Tulip(flowername, price);
+                        break;
+                    case "Violet":
+                        fl = new Violet(flowername, price);
+                        break;
+                    default:
+                        throw new Exception("Flower type not found.");
+                }
+
+                this.FlowerCollection.Add(fl);
+            } 
         }
-        public void DeleteFlowerFromFlowerCollection(Flower flower)
+        public void DeleteFlowerFromFlowerCollection(string className, int count)
         {
-            this.FlowerCollection.Remove(flower);
+            List<Flower> toRemove = new List<Flower>();
+
+            foreach (Flower i in FlowerCollection)
+            {
+                if (i.GetType().Name == className && toRemove.Count < count)
+                {
+                    toRemove.Add(i);
+                }
+            }
+
+            foreach (Flower i in toRemove)
+            {
+                FlowerCollection.Remove(i);
+            }
         }
 
         public void DisplayFlowerNamesAndPriceAndQuantity()

@@ -15,17 +15,19 @@ namespace FlowerShop
     //class
     public abstract class Flower : IFlower
     {
+        private static int flowerID = 0;
         protected string flowername;
         public double price;
         public string Flowername
         {
             get { return flowername; }
-            set { flowername = value; }
+            set { flowername = value + flowerID; }
         }
         //constructor
         public Flower(string flowername, double price)
         {
-            this.flowername = flowername; this.price = price;
+            flowerID++;
+            this.Flowername = flowername; this.price = price;
         }
         
         //methods

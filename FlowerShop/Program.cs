@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FlowerShop.Flowers;
-using FlowerShop.Menu;
+using FlowerShop.MenuNamespace;
 
 
 
@@ -15,27 +15,28 @@ namespace FlowerShop
         static void Main(string[] args)
         {
             //new flower
-            Astra Astra1 = new Astra("Astra", 3.00);
-            Astra1.DisplayFlower();
+            //Astra Astra1 = new Astra("Astra", 3.00);
+            //Astra1.DisplayFlower();
 
 
-            Rose Rose1 = new Rose("Rose", 3.00, 30);
-            Rose Rose2 = new Rose("Rose", 3.00);
-            Rose1.DisplayFlower();
-
+            //Rose Rose1 = new Rose("Rose", 3.00, 30);
+            //Rose Rose2 = new Rose("Rose", 3.00);
+            //Rose1.DisplayFlower();
 
             FlowerSet FlowerSet1 = new FlowerSet();
-            FlowerSet1.AddFlowerToFlowerCollection(Astra1);
-            FlowerSet1.AddFlowerToFlowerCollection(Rose1);
+            FlowerSet1.AddFlowerToFlowerCollection("Astra", 3, "Astra", 3.00);
+            FlowerSet1.AddFlowerToFlowerCollection("Rose", 3, "Rose", 3.00, 30);
 
             FlowerSet1.DisplayFlowerNamesAndPriceAndQuantity();
-            FlowerSet1.DeleteFlowerFromFlowerCollection(Rose1);
-            FlowerSet1.DisplayTotalPrice();
+            FlowerSet1.DeleteFlowerFromFlowerCollection("Rose", 1);
+            //FlowerSet1.DisplayTotalPrice();
             Console.WriteLine("___________");
             FlowerSet1.DisplayFlowerNamesAndPriceAndQuantity();
-            FlowerSet1.DisplayTotalPrice();
-            FlowerSet1.DisplayTotalPrice(20);
-            ShowMainMenu();
+            //FlowerSet1.DisplayTotalPrice();
+            //FlowerSet1.DisplayTotalPrice(20);
+
+            //Menu menu = new Menu();
+            //menu.ShowMainMenu();
 
 
 

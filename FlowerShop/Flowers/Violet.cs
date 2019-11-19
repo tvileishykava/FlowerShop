@@ -8,6 +8,7 @@ namespace FlowerShop.Flowers
 {
     class Violet : Flower
     {
+        public static readonly string ClassName = "Violet";
         public Violet(string flowername, double price) : base(flowername, price) {}
     }
 }
