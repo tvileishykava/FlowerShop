@@ -28,7 +28,7 @@ namespace FlowerShop
             FlowerSet1.AddFlowerToFlowerCollection("Rose", 3, "Rose", 3.00, 30);
 
             FlowerSet1.DisplayFlowerNamesAndPriceAndQuantity();
-            FlowerSet1.DeleteFlowerFromFlowerCollection("Rose", 1);
+            FlowerSet1.DeleteFlowerFromFlowerCollection("Astra", 1);
             //FlowerSet1.DisplayTotalPrice();
             Console.WriteLine("___________");
             FlowerSet1.DisplayFlowerNamesAndPriceAndQuantity();

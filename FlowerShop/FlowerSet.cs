@@ -11,14 +11,15 @@ namespace FlowerShop
     public interface IFlowerSet
     {
         void DisplayTotalPrice();
-        //rework
         void DisplayTotalPrice(double pack);
-        //rework
         void AddFlowerToFlowerCollection(string className, int count, string flowername, double price, int flowerlength);
         void DeleteFlowerFromFlowerCollection(string flower, int count);
+        
+        //works now for flower collection, names with indexes
         void DisplayFlowerNamesAndPriceAndQuantity();
         //void Sort(); - 
         //Flower FindByName(string name);
+        //void RemoveAllFlowersFromFlowerCollection();
     }
         //class
     class FlowerSet : IFlowerSet
