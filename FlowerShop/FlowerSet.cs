@@ -14,23 +14,24 @@ namespace FlowerShop
         void DisplayTotalPrice(double pack);
         void AddFlowerToFlowerCollection(string className, int count, string flowername, double price, int flowerlength);
         void DeleteFlowerFromFlowerCollection(string flower, int count);
-        
+        void RemoveAllFlowersFromFlowerCollection();
+
         //works now for flower collection, names with indexes
         void DisplayFlowerNamesAndPriceAndQuantity();
         //void Sort(); - 
-        //Flower FindByName(string name);
-        //void RemoveAllFlowersFromFlowerCollection();
+        //Flower FindFlowerinFlowerSetByName(string flowername);
+        
     }
-        //class
+    //class
     class FlowerSet : IFlowerSet
     {
         public List<Flower> FlowerCollection;
-        
+
         //constructor
         public FlowerSet()
         {
             this.FlowerCollection = new List<Flower>();
-        }
+                    }
 
         //whithout pack
         public void DisplayTotalPrice()
@@ -52,6 +53,7 @@ namespace FlowerShop
             }
             double resultwithpack = result + pack;
             Console.WriteLine("FlowerSet price with pack: " + resultwithpack);
+
         }
         public void AddFlowerToFlowerCollection(string className, int count, string flowername, double price, int flowerlength = 25)
         {
@@ -78,7 +80,7 @@ namespace FlowerShop
                 }
 
                 this.FlowerCollection.Add(fl);
-            } 
+            }
         }
         public void DeleteFlowerFromFlowerCollection(string className, int count)
         {
@@ -97,7 +99,11 @@ namespace FlowerShop
                 FlowerCollection.Remove(i);
             }
         }
+        public void RemoveAllFlowersFromFlowerCollection()
+        {
+            this.FlowerCollection.Clear();
 
+        }
         public void DisplayFlowerNamesAndPriceAndQuantity()
         {
             foreach (Flower i in this.FlowerCollection)

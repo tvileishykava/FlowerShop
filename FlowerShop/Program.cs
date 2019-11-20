@@ -29,12 +29,16 @@ namespace FlowerShop
 
             FlowerSet1.DisplayFlowerNamesAndPriceAndQuantity();
             FlowerSet1.DeleteFlowerFromFlowerCollection("Astra", 1);
-            //FlowerSet1.DisplayTotalPrice();
+            FlowerSet1.DisplayTotalPrice();
+            FlowerSet1.DisplayTotalPrice(20);
             Console.WriteLine("___________");
             FlowerSet1.DisplayFlowerNamesAndPriceAndQuantity();
-            //FlowerSet1.DisplayTotalPrice();
-            //FlowerSet1.DisplayTotalPrice(20);
-
+            FlowerSet1.DisplayTotalPrice();
+            FlowerSet1.DisplayTotalPrice(20);
+            FlowerSet1.RemoveAllFlowersFromFlowerCollection();
+            FlowerSet1.DisplayFlowerNamesAndPriceAndQuantity();
+            FlowerSet1.DisplayTotalPrice();
+            FlowerSet1.DisplayTotalPrice(20);
             //Menu menu = new Menu();
             //menu.ShowMainMenu();
 

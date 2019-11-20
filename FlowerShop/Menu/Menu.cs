@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace FlowerShop.MenuNamespace
 {
+    public interface IMenu
+    {
+        void ShowMainMenu();
+    }
     class Menu
     {
         public void ShowMainMenu()
