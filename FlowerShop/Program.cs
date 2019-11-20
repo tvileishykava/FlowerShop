@@ -27,6 +27,9 @@ namespace FlowerShop
             FlowerSet1.AddFlowerToFlowerCollection("Astra", 3, "Astra", 3.00);
             FlowerSet1.AddFlowerToFlowerCollection("Rose", 3, "Rose", 3.00, 30);
 
+            Menu menu = new Menu();
+            menu.DisplayAvailableFlowers();
+
             FlowerSet1.DisplayFlowerNamesAndPriceAndQuantity();
             FlowerSet1.DeleteFlowerFromFlowerCollection("Astra", 1);
             FlowerSet1.DisplayTotalPrice();

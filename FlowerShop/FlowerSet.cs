@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FlowerShop.Flowers;
 
 namespace FlowerShop
@@ -18,7 +15,7 @@ namespace FlowerShop
 
         //works now for flower collection, names with indexes
         void DisplayFlowerNamesAndPriceAndQuantity();
-        //void Sort(); - 
+        //void SortFlowersInFlowerSetBySmth(); 
         //Flower FindFlowerinFlowerSetByName(string flowername);
         
     }
@@ -31,7 +28,7 @@ namespace FlowerShop
         public FlowerSet()
         {
             this.FlowerCollection = new List<Flower>();
-                    }
+        }
 
         //whithout pack
         public void DisplayTotalPrice()
