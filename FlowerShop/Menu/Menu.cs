@@ -5,15 +5,42 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 
+/*        
+        DisplayAvailableFlowers
+
+    void AddFlowerToFlowerCollection(string className, int count, string flowername, double price, int flowerlength);
+
+        void DisplayFlowerNamesAndPriceAndQuantity();
+                void FindFlowerinFlowerSetByPrice(double minprice, double maxprice);
+                        void SortFlowersInFlowerSetByPrice();
+
+
+
+      void DeleteFlowerFromFlowerCollection(string flower, int count);
+        void RemoveAllFlowersFromFlowerCollection();
+
+    void DisplayTotalPrice();
+        void DisplayTotalPrice(double pack);
+
+              */
+
 namespace FlowerShop.MenuNamespace
 {
     public interface IMenu
     {
         void ShowMainMenu();
         void DisplayAvailableFlowers();
+
     }
     class Menu : IMenu
     {
+        private FlowerSet flSet;
+        //constructor
+        public Menu()
+        {
+            this.flSet = new FlowerSet();
+        }
+
         public void ShowMainMenu()
         {
             Console.WriteLine("To add flower - click on 1" +

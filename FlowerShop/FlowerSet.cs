@@ -18,8 +18,8 @@ namespace FlowerShop
 
         //works now for flower collection, names with indexes
         void DisplayFlowerNamesAndPriceAndQuantity();
-        void SortFlowersInFlowerSetBySmth(); 
-        //Flower FindFlowerinFlowerSetByName(string flowername);
+        void SortFlowersInFlowerSetByPrice();
+        void FindFlowerinFlowerSetByPrice(double minprice, double maxprice);
         
     }
     //class
@@ -146,24 +146,25 @@ namespace FlowerShop
             }
             
         }
-        public void SortFlowersInFlowerSetBySmth()
+        public void SortFlowersInFlowerSetByPrice()
         {
-            //this.FlowerCollection.Sort();
-            //List<Order> SortedList = objListOrder.OrderBy(o => o.OrderDate).ToList();
             FlowerCollection.OrderBy(i => i.price);
-            List<Flower> Sorted = new List<Flower>();
 
             foreach (Flower i in FlowerCollection)
             {
-
-                    Sorted.Add(i);
                 Console.WriteLine("Sorted by price: " + i.Flowername + " price: " + i.price);
             }
-            
+        }
+        public void FindFlowerinFlowerSetByPrice(double minprice=0, double maxprice=Double.PositiveInfinity)
+        {
 
+            List<Flower> ByPrice = FlowerCollection.FindAll(i => minprice <= i.price && i.price <= maxprice);
+            foreach (Flower i in ByPrice)
+            {
+                Console.WriteLine("Flowers in price range: " + minprice + " - " + maxprice + " : " + i.Flowername + " " + i.price + "BYN");
+            }
 
         }
-
 
     }
 
