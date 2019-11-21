@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using FlowerShop.Flowers;
+using System.Runtime.Serialization;
 
 namespace FlowerShop
 {
@@ -47,10 +48,25 @@ namespace FlowerShop
             foreach (Flower i in this.FlowerCollection)
             {
                 result = result + i.price;
-            }
-            double resultwithpack = result + pack;
-            Console.WriteLine("FlowerSet price with pack: " + resultwithpack);
+                double resultwithpack = result + pack;
 
+            }
+            try
+            {
+                double resultwithpack = result + pack;
+
+                if (resultwithpack == pack)
+                {
+                    throw new Exception("No flowers to pack.");
+                }
+                Console.WriteLine("FlowerSet price with pack: " + resultwithpack);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"{e.Message}");
+            }
+            //Console.ReadLine();
         }
         public void AddFlowerToFlowerCollection(string className, int count, string flowername, double price, int flowerlength = 25)
         {
@@ -120,5 +136,25 @@ namespace FlowerShop
         }
 
 
+    }
+
+    [Serializable]
+    internal class Exeption : Exception
+    {
+        public Exeption()
+        {
+        }
+
+        public Exeption(string message) : base(message)
+        {
+        }
+
+        public Exeption(string message, Exception innerException) : base(message, innerException)
+        {
+        }
+
+        protected Exeption(SerializationInfo info, StreamingContext context) : base(info, context)
+        {
+        }
     }
 }
