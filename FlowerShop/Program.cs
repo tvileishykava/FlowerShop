@@ -25,7 +25,8 @@ namespace FlowerShop
 
             FlowerSet FlowerSet1 = new FlowerSet();
             FlowerSet1.AddFlowerToFlowerCollection("Astra", 3, "Astra", 3.00);
-            FlowerSet1.AddFlowerToFlowerCollection("Rose", 3, "Rose", 3.00, 30);
+            FlowerSet1.AddFlowerToFlowerCollection("Rose", 2, "Rose", 5.00, 30);
+            FlowerSet1.SortFlowersInFlowerSetBySmth();
 
             Menu menu = new Menu();
             menu.DisplayAvailableFlowers();

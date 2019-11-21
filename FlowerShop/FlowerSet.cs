@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using FlowerShop.Flowers;
 using System.Runtime.Serialization;
+using System.Linq;
+
 
 namespace FlowerShop
 {
@@ -16,7 +18,7 @@ namespace FlowerShop
 
         //works now for flower collection, names with indexes
         void DisplayFlowerNamesAndPriceAndQuantity();
-        //void SortFlowersInFlowerSetBySmth(); 
+        void SortFlowersInFlowerSetBySmth(); 
         //Flower FindFlowerinFlowerSetByName(string flowername);
         
     }
@@ -143,6 +145,23 @@ namespace FlowerShop
                 Console.WriteLine(info);
             }
             
+        }
+        public void SortFlowersInFlowerSetBySmth()
+        {
+            //this.FlowerCollection.Sort();
+            //List<Order> SortedList = objListOrder.OrderBy(o => o.OrderDate).ToList();
+            FlowerCollection.OrderBy(i => i.price);
+            List<Flower> Sorted = new List<Flower>();
+
+            foreach (Flower i in FlowerCollection)
+            {
+
+                    Sorted.Add(i);
+                Console.WriteLine("Sorted by price: " + i.Flowername + " price: " + i.price);
+            }
+            
+
+
         }
 
 
