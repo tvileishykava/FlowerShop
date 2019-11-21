@@ -39,7 +39,18 @@ namespace FlowerShop
             {
                 result = result + i.price;
             }
-            Console.WriteLine("FlowerSet price: " + result);
+            try
+            {
+                if (result == 0)
+                {
+                throw new Exception("Notice! No flowers added.");
+                }
+                Console.WriteLine("FlowerSet price: " + result);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"{e.Message}");
+            }
         }
         //? with pack
         public void DisplayTotalPrice(double pack)
@@ -48,7 +59,7 @@ namespace FlowerShop
             foreach (Flower i in this.FlowerCollection)
             {
                 result = result + i.price;
-                double resultwithpack = result + pack;
+                //double resultwithpack = result + pack;
 
             }
             try
@@ -57,7 +68,7 @@ namespace FlowerShop
 
                 if (resultwithpack == pack)
                 {
-                    throw new Exception("No flowers to pack.");
+                    throw new Exception("Notice! No flowers to pack.");
                 }
                 Console.WriteLine("FlowerSet price with pack: " + resultwithpack);
 
@@ -66,7 +77,6 @@ namespace FlowerShop
             {
                 Console.WriteLine($"{e.Message}");
             }
-            //Console.ReadLine();
         }
         public void AddFlowerToFlowerCollection(string className, int count, string flowername, double price, int flowerlength = 25)
         {
