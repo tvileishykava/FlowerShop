@@ -9,6 +9,6 @@ namespace FlowerShop.Flowers
     class Violet : Flower
     {
         public static readonly string ClassName = "Violet";
-        public Violet(string flowername, double price) : base(flowername, price) {}
+        public Violet(string flowername, double price=4) : base(flowername, price) {}
     }
 }

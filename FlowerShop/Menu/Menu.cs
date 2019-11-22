@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 using System.Reflection;
 
 /*        
-        DisplayAvailableFlowers
 
     void AddFlowerToFlowerCollection(string className, int count, string flowername, double price, int flowerlength);
-
-        void DisplayFlowerNamesAndPriceAndQuantity();
-                void FindFlowerinFlowerSetByPrice(double minprice, double maxprice);
+     void FindFlowerinFlowerSetByPrice(double minprice, double maxprice);
                         void SortFlowersInFlowerSetByPrice();
 
 
@@ -66,13 +63,29 @@ namespace FlowerShop.MenuNamespace
             switch (sign)
             {
                 case "2":
-                    //flSet.AddFlowerToFlowerCollection();
+                    Console.WriteLine("Enter flower name:");
+                    string fn = Convert.ToString(Console.ReadLine());
+                    Console.WriteLine("How many flowers to add:");
+                    int c = Convert.ToInt32(Console.ReadLine());
+                    if (fn == "Rose")
+                    {
+                        Console.WriteLine("Rose of what size do you want to add:");
+                        int l = Convert.ToInt32(Console.ReadLine());
+                        flSet.AddFlowerToFlowerCollection(fn, c, fn, l);
+                    }
+                    Console.WriteLine("\tReporting:  " + c + " flower/flowers added");
                     break;
             }
             switch (sign)
             {
                 case "3":
                     flSet.DisplayFlowerNamesAndPriceAndQuantity();
+                    break;
+            }
+            switch (sign)
+            {
+                case "4":
+                    flSet.FindFlowerinFlowerSetByPrice();
                     break;
             }
         }

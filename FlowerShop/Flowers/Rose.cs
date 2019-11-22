@@ -9,7 +9,7 @@ namespace FlowerShop.Flowers
     class Rose : Flower
     {
         public static readonly string ClassName = "Rose";
-        public Rose(string flowername, double price, int flowerlength=25) : base(flowername, price)
+        public Rose(string flowername, double price=2, int flowerlength=25) : base(flowername, price)
         {
             flowerlength_ = flowerlength;
         }
