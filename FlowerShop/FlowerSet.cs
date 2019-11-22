@@ -131,20 +131,33 @@ namespace FlowerShop
         }
         public void DisplayFlowerNamesAndPriceAndQuantity()
         {
-            foreach (Flower i in this.FlowerCollection)
+
+            try
             {
                 string info = "";
-                if (i.GetType() == typeof(Rose))
+                foreach (Flower i in this.FlowerCollection)
                 {
-                    info = "| " + i.Flowername + " | " + (i as Rose).flowerlength_ + " sm " + "| price: " + i.price + " BYN" + " | " ;
+                    
+                    if (i.GetType() == typeof(Rose))
+                    {
+                        info = "| " + i.Flowername + " | " + (i as Rose).flowerlength_ + " sm " + "| price: " + i.price + " BYN" + " | ";
+                    }
+                    else
+                    {
+                        info = "| " + i.Flowername + " | price: " + i.price + " BYN" + " | ";
+                    }
                 }
-                else
+                if (FlowerCollection.Count == 0)
                 {
-                    info = "| " + i.Flowername + " | price: " + i.price + " BYN" + " | ";
-                } 
+                    throw new Exception("Notice! No Flowers added to FlowerSet!");
+                }
                 Console.WriteLine(info);
+
             }
-            
+            catch (Exception e)
+            {
+                Console.WriteLine($"{e.Message}");
+            }
         }
         public void SortFlowersInFlowerSetByPrice()
         {

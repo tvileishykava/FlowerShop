@@ -43,9 +43,18 @@ namespace FlowerShop.MenuNamespace
 
         public void ShowMainMenu()
         {
-            Console.WriteLine("\tTo see list of flowers - click on button 1" +
-               "\n\tTo add flower/flowers to Flowerset - click on button 2" +
-                ""
+            Console.WriteLine(
+               "\n\t FlowerSet Creation Main Menu" +
+               "\n\n\t To see list of available flowers - click on button 1" +
+               "\n\t To add flower/flowers to Flowerset - click on button 2" +
+               "\n\t To review your FlowerSet - click on button 3" +
+               "\n\t To find flower in FlowerSet by price - click on button 4" +
+               "\n\t To sort your FlowerSet by price - click on button 5" +
+               "\n\t To delete flower/flowers from FlowerSet - click on button 6" +
+               "\n\t To remove All flowers from FlowerSet - click on button 7" +
+               "\n\t To review total price of the FlowerSet - click on button 8" +
+               "\n\t To add pack and review total price of the FlowerSet - click on button 9" +
+               ""
                 );
             string sign = Console.ReadLine();
             switch (sign)
@@ -57,6 +66,12 @@ namespace FlowerShop.MenuNamespace
             switch (sign)
             {
                 case "2":
+                    //flSet.AddFlowerToFlowerCollection();
+                    break;
+            }
+            switch (sign)
+            {
+                case "3":
                     flSet.DisplayFlowerNamesAndPriceAndQuantity();
                     break;
             }

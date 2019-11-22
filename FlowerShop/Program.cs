@@ -14,25 +14,21 @@ namespace FlowerShop
     {
         static void Main(string[] args)
         {
-            //new flower
-            //Astra Astra1 = new Astra("Astra", 3.00);
-            //Astra1.DisplayFlower();
 
 
             //Rose Rose1 = new Rose("Rose", 3.00, 30);
             //Rose Rose2 = new Rose("Rose", 3.00);
             //Rose1.DisplayFlower();
 
-            /*FlowerSet FlowerSet1 = new FlowerSet();
-            FlowerSet1.AddFlowerToFlowerCollection("Astra", 3, "Astra", 3.00);
-            FlowerSet1.AddFlowerToFlowerCollection("Rose", 2, "Rose", 5.00, 30);
-            FlowerSet1.SortFlowersInFlowerSetBySmth();
+            //FlowerSet FlowerSet1 = new FlowerSet();
+            //FlowerSet1.AddFlowerToFlowerCollection("Astra", 3, "Astra", 3.00);
+            //FlowerSet1.AddFlowerToFlowerCollection("Rose", 2, "Rose", 5.00, 30);
+            //FlowerSet1.SortFlowersInFlowerSetBySmth();
 
-            Menu menu = new Menu();
-            menu.DisplayAvailableFlowers();
+            //Menu menu = new Menu();
+            //menu.DisplayAvailableFlowers();
 
-            FlowerSet1.DisplayFlowerNamesAndPriceAndQuantity();
-            FlowerSet1.DeleteFlowerFromFlowerCollection("Astra", 1);
+            /*FlowerSet1.DeleteFlowerFromFlowerCollection("Astra", 1);
 
 
             FlowerSet1.DisplayTotalPrice();
@@ -49,6 +45,7 @@ namespace FlowerShop
             FlowerSet1.DisplayTotalPrice(20);*/
             Menu menu = new Menu();
             menu.ShowMainMenu();
+            //flSet.DisplayFlowerNamesAndPriceAndQuantity();
 
 
 
