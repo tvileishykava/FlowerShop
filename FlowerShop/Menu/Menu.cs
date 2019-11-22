@@ -43,25 +43,31 @@ namespace FlowerShop.MenuNamespace
 
         public void ShowMainMenu()
         {
-            Console.WriteLine("To add flower - click on 1" +
-                "\n2" +
+            Console.WriteLine("\tTo see list of flowers - click on button 1" +
+               "\n\tTo add flower/flowers to Flowerset - click on button 2" +
                 ""
                 );
             string sign = Console.ReadLine();
             switch (sign)
             {
                  case "1":
-                 Console.WriteLine("addition");
-                 //FlowerSet1.AddFlowerToFlowerCollection("Rose", 3, "Rose", 3.00, 30);
+                    DisplayAvailableFlowers();
                  break;
+            }
+            switch (sign)
+            {
+                case "2":
+                    flSet.DisplayFlowerNamesAndPriceAndQuantity();
+                    break;
             }
         }
         public void DisplayAvailableFlowers()
         {
+            Console.WriteLine("\tToday are available\n");
             String[] typelist = GetTypesInNamespace(Assembly.GetExecutingAssembly(), "FlowerShop.Flowers");
             for (int i = 0; i < typelist.Length; i++)
             {
-                Console.WriteLine(typelist[i]);
+                Console.WriteLine("\t" + typelist[i]);
             }
         }
         private String[] GetTypesInNamespace(Assembly assembly, string nameSpace)
