@@ -43,10 +43,7 @@ namespace FlowerShop
             }
             try
             {
-                if (result == 0)
-                {
-                throw new Exception("Notice! No flowers added.");
-                }
+                CheckFlowersInCollection();
                 Console.WriteLine("FlowerSet price: " + result);
             }
             catch (Exception e)
@@ -134,7 +131,6 @@ namespace FlowerShop
 
             try
             {
-                
                 foreach (Flower i in this.FlowerCollection)
                 {
                     string info = "";
@@ -148,11 +144,7 @@ namespace FlowerShop
                     }
                     Console.WriteLine(info);
                 }
-                if (FlowerCollection.Count == 0)
-                {
-                    throw new Exception("Notice! No Flowers added to FlowerSet!");
-                }
-
+                CheckFlowersInCollection();
             }
             catch (Exception e)
             {
@@ -172,10 +164,7 @@ namespace FlowerShop
         {
             try
             {
-                if (FlowerCollection.Count == 0)
-                {
-                    throw new Exception("Notice! No Flowers added to FlowerSet!");
-                }
+                CheckFlowersInCollection();
                 List<Flower> ByPrice = FlowerCollection.FindAll(i => minprice <= i.Price && i.Price <= maxprice);
 
                 if (ByPrice.Count == 0)
@@ -191,6 +180,13 @@ namespace FlowerShop
             catch (Exception e)
             {
                 Console.WriteLine($"{e.Message}");
+            }
+        }
+        private void CheckFlowersInCollection()
+        {
+            if (FlowerCollection.Count == 0)
+            {
+                throw new Exception("Notice! No Flowers added to FlowerSet!");
             }
         }
     }
