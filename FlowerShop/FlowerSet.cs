@@ -13,6 +13,7 @@ namespace FlowerShop
         void DisplayTotalPrice();
         void DisplayTotalPrice(double pack);
         void AddFlowerToFlowerCollection(string className, int count, string flowername, int flowerlength);
+        void DeleteFlowerFromFlowerCollection(string flower, int count, int flowerlength);
         void DeleteFlowerFromFlowerCollection(string flower, int count);
         void RemoveAllFlowersFromFlowerCollection();
 
@@ -71,7 +72,7 @@ namespace FlowerShop
                 Console.WriteLine($"{e.Message}");
             }
         }
-        public void AddFlowerToFlowerCollection(string className, int count, string flowername, int flowerlength = 25)
+        public void AddFlowerToFlowerCollection(string className, int count, string flowername, int flowerlength=25)
         {
             Flower fl;
 
@@ -98,13 +99,16 @@ namespace FlowerShop
                 this.FlowerCollection.Add(fl);
             }
         }
-        public void DeleteFlowerFromFlowerCollection(string className, int count)
+        public void DeleteFlowerFromFlowerCollection(string className, int count, int flowerlength)
         {
+            CheckFlowersInCollection();
             List<Flower> toRemove = new List<Flower>();
-
             foreach (Flower i in FlowerCollection)
             {
-                if (i.GetType().Name == className && toRemove.Count < count)
+                bool isCountLowerThanAllowed = toRemove.Count < count;
+                bool isRose = i.GetType().Name == typeof(Rose).Name;
+
+                if (isRose && (i as Rose).flowerlength_ == flowerlength && isCountLowerThanAllowed)
                 {
                     toRemove.Add(i);
                 }
@@ -114,11 +118,36 @@ namespace FlowerShop
             {
                 FlowerCollection.Remove(i);
             }
+            Console.WriteLine("\tReporting:  " + toRemove.Count + " flower/flowers deleted");
+        }
+        public void DeleteFlowerFromFlowerCollection(string className, int count)
+        {
+            CheckFlowersInCollection();
+            List<Flower> toRemove = new List<Flower>();
+            foreach (Flower i in FlowerCollection)
+            {
+                bool isCorrectName = i.GetType().Name == className;
+                bool isCountLowerThanAllowed = toRemove.Count < count;
+
+                if (isCorrectName && isCountLowerThanAllowed)
+                {
+                    toRemove.Add(i);
+                }
+            }
+
+            foreach (Flower i in toRemove)
+            {
+                FlowerCollection.Remove(i);
+            }
+            Console.WriteLine("\tReporting:  " + toRemove.Count + " flower/flowers deleted");
         }
         public void RemoveAllFlowersFromFlowerCollection()
         {
-            this.FlowerCollection.Clear();
-
+            if (CheckFlowersInCollection())
+            {
+                this.FlowerCollection.Clear();
+                Console.WriteLine("All flowers removed from the Flower Set");
+            }
         }
         public void DisplayFlowerNamesAndPriceAndQuantity()
         {

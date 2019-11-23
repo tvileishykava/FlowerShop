@@ -49,6 +49,7 @@ namespace FlowerShop.MenuNamespace
                         break;
 
                     case "2":
+                        Console.WriteLine("Flower Addition to Flower Set");
                         Console.WriteLine("Enter flower name:");
                         string fn = Convert.ToString(Console.ReadLine());
                         Console.WriteLine("How many flowers to add:");
@@ -68,11 +69,13 @@ namespace FlowerShop.MenuNamespace
                         break;
 
                     case "3":
+                        Console.WriteLine("Review the Flower Set");
                         flSet.DisplayFlowerNamesAndPriceAndQuantity();
                         ShowMainMenu();
                         break;
 
                     case "4":
+                        Console.WriteLine("Range flowers by price");
                         if (!flSet.CheckFlowersInCollection())
                         {
                             ShowMainMenu();
@@ -87,12 +90,42 @@ namespace FlowerShop.MenuNamespace
                         break;
 
                     case "5":
+                        Console.WriteLine("Sort flowers in Flower Set by price");
                         flSet.SortFlowersInFlowerSetByPrice();
                         ShowMainMenu();
                         break;
 
-                        //9
+                    case "6":
+                        if (!flSet.CheckFlowersInCollection())
+                        {
+                            ShowMainMenu();
+                            break;
+                        }
+                        Console.WriteLine("Flower Deletion");
+                        Console.WriteLine("Enter flower name:");
+                        string fln = Convert.ToString(Console.ReadLine());
+                        Console.WriteLine("How many flowers to delete:");
+                        int cou = Convert.ToInt32(Console.ReadLine());
 
+                        if (fln == "Rose")
+                        {
+                            Console.WriteLine("Rose of what size do you want to delete:");
+                            int l = Convert.ToInt32(Console.ReadLine());
+                            flSet.DeleteFlowerFromFlowerCollection(fln, cou, l);
+                        }
+                        else
+                        {
+                            flSet.DeleteFlowerFromFlowerCollection(fln, cou);
+                        }
+                        ShowMainMenu();
+                        //ADD exception  если длина розы не та!!!!!!!!!!!!!!!!! и нет достаточно цветов
+                        break;
+
+                    case "7":
+                        Console.WriteLine("All flowers removal");
+                        flSet.RemoveAllFlowersFromFlowerCollection();
+                        ShowMainMenu();
+                        break;
 
                     case "q":
                         break;
