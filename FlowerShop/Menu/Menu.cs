@@ -34,7 +34,6 @@ namespace FlowerShop.MenuNamespace
                "\n\t To delete flower/flowers from FlowerSet - click on button 6" +
                "\n\t To remove All flowers from FlowerSet - click on button 7" +
                "\n\t To review total price of the FlowerSet - click on button 8" +
-               "\n\t To add pack and review total price of the FlowerSet - click on button 9" +
                "\n\t To exit - enter q" +
                ""
                 );
@@ -124,6 +123,12 @@ namespace FlowerShop.MenuNamespace
                     case "7":
                         Console.WriteLine("All flowers removal");
                         flSet.RemoveAllFlowersFromFlowerCollection();
+                        ShowMainMenu();
+                        break;
+
+                    case "8":
+                        Console.WriteLine("Review Total Price");
+                        flSet.DisplayTotalPrice();
                         ShowMainMenu();
                         break;
 

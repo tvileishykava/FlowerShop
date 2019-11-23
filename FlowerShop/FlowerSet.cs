@@ -11,7 +11,7 @@ namespace FlowerShop
     public interface IFlowerSet
     {
         void DisplayTotalPrice();
-        void DisplayTotalPrice(double pack);
+        //void DisplayTotalPrice(double pack);
         void AddFlowerToFlowerCollection(string className, int count, string flowername, int flowerlength);
         void DeleteFlowerFromFlowerCollection(string flower, int count, int flowerlength);
         void DeleteFlowerFromFlowerCollection(string flower, int count);
@@ -46,7 +46,7 @@ namespace FlowerShop
             CheckFlowersInCollection();
             Console.WriteLine("FlowerSet price: " + result);
         }
-        //? with pack
+        /* with pack
         public void DisplayTotalPrice(double pack)
         {
             double result = 0;
@@ -71,7 +71,7 @@ namespace FlowerShop
             {
                 Console.WriteLine($"{e.Message}");
             }
-        }
+        }*/
         public void AddFlowerToFlowerCollection(string className, int count, string flowername, int flowerlength=25)
         {
             Flower fl;
