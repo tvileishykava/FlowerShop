@@ -73,6 +73,11 @@ namespace FlowerShop.MenuNamespace
                         break;
 
                     case "4":
+                        if (!flSet.CheckFlowersInCollection())
+                        {
+                            ShowMainMenu();
+                            break;
+                        }
                         Console.WriteLine("Enter min price:");
                         double min = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Enter max price:");

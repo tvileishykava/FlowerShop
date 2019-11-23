@@ -41,15 +41,9 @@ namespace FlowerShop
             {
                 result = result + i.Price;
             }
-            try
-            {
-                CheckFlowersInCollection();
-                Console.WriteLine("FlowerSet price: " + result);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"{e.Message}");
-            }
+
+            CheckFlowersInCollection();
+            Console.WriteLine("FlowerSet price: " + result);
         }
         //? with pack
         public void DisplayTotalPrice(double pack)
@@ -128,33 +122,25 @@ namespace FlowerShop
         }
         public void DisplayFlowerNamesAndPriceAndQuantity()
         {
-
-            try
+            foreach (Flower i in this.FlowerCollection)
             {
-                foreach (Flower i in this.FlowerCollection)
+                string info = "";
+                if (i.GetType() == typeof(Rose))
                 {
-                    string info = "";
-                    if (i.GetType() == typeof(Rose))
-                    {
-                        info = "| " + i.Flowername + " | " + (i as Rose).flowerlength_ + " sm " + "| price: " + i.Price + " BYN" + " | ";
-                    }
-                    else
-                    {
-                        info = "| " + i.Flowername + " | price: " + i.Price + " BYN" + " | ";
-                    }
-                    Console.WriteLine(info);
+                    info = "| " + i.Flowername + " | " + (i as Rose).flowerlength_ + " sm " + "| price: " + i.Price + " BYN" + " | ";
                 }
-                CheckFlowersInCollection();
+                else
+                {
+                    info = "| " + i.Flowername + " | price: " + i.Price + " BYN" + " | ";
+                }
+                Console.WriteLine(info);
             }
-            catch (Exception e)
-            {
-                Console.WriteLine($"{e.Message}");
-            }
+            CheckFlowersInCollection();
         }
         public void SortFlowersInFlowerSetByPrice()
         {
             FlowerCollection.OrderBy(i => i.Price);
-
+            CheckFlowersInCollection();
             foreach (Flower i in FlowerCollection)
             {
                 Console.WriteLine("Sorted by price: " + i.Flowername + " price: " + i.Price);
@@ -182,11 +168,23 @@ namespace FlowerShop
                 Console.WriteLine($"{e.Message}");
             }
         }
-        private void CheckFlowersInCollection()
+        public bool CheckFlowersInCollection()
         {
-            if (FlowerCollection.Count == 0)
+            try
             {
-                throw new Exception("Notice! No Flowers added to FlowerSet!");
+                if (FlowerCollection.Count == 0)
+                {
+                    throw new Exception("Notice! No Flowers added to FlowerSet!");
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"{e.Message}");
+                return false;
             }
         }
     }
