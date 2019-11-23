@@ -12,7 +12,7 @@ namespace FlowerShop
     {
         void DisplayTotalPrice();
         void DisplayTotalPrice(double pack);
-        void AddFlowerToFlowerCollection(string className, int count, string flowername, double price, int flowerlength);
+        void AddFlowerToFlowerCollection(string className, int count, string flowername, int flowerlength);
         void DeleteFlowerFromFlowerCollection(string flower, int count);
         void RemoveAllFlowersFromFlowerCollection();
 
@@ -39,7 +39,7 @@ namespace FlowerShop
             double result = 0;
             foreach (Flower i in this.FlowerCollection)
             {
-                result = result + i.price;
+                result = result + i.Price;
             }
             try
             {
@@ -60,7 +60,7 @@ namespace FlowerShop
             double result = 0;
             foreach (Flower i in this.FlowerCollection)
             {
-                result = result + i.price;
+                result = result + i.Price;
                 //double resultwithpack = result + pack;
 
             }
@@ -80,7 +80,7 @@ namespace FlowerShop
                 Console.WriteLine($"{e.Message}");
             }
         }
-        public void AddFlowerToFlowerCollection(string className, int count, string flowername, double price, int flowerlength = 25)
+        public void AddFlowerToFlowerCollection(string className, int count, string flowername, int flowerlength = 25)
         {
             Flower fl;
 
@@ -89,16 +89,16 @@ namespace FlowerShop
                 switch (className)
                 {
                     case "Astra":
-                        fl = new Astra(flowername, price);
+                        fl = new Astra(flowername);
                         break;
                     case "Rose":
-                        fl = new Rose(flowername, price, flowerlength);
+                        fl = new Rose(flowername, flowerlength);
                         break;
                     case "Tulip":
-                        fl = new Tulip(flowername, price);
+                        fl = new Tulip(flowername);
                         break;
                     case "Violet":
-                        fl = new Violet(flowername, price);
+                        fl = new Violet(flowername);
                         break;
                     default:
                         throw new Exception("Flower type not found.");
@@ -134,24 +134,24 @@ namespace FlowerShop
 
             try
             {
-                string info = "";
+                
                 foreach (Flower i in this.FlowerCollection)
                 {
-                    
+                    string info = "";
                     if (i.GetType() == typeof(Rose))
                     {
-                        info = "| " + i.Flowername + " | " + (i as Rose).flowerlength_ + " sm " + "| price: " + i.price + " BYN" + " | ";
+                        info = "| " + i.Flowername + " | " + (i as Rose).flowerlength_ + " sm " + "| price: " + i.Price + " BYN" + " | ";
                     }
                     else
                     {
-                        info = "| " + i.Flowername + " | price: " + i.price + " BYN" + " | ";
+                        info = "| " + i.Flowername + " | price: " + i.Price + " BYN" + " | ";
                     }
+                    Console.WriteLine(info);
                 }
                 if (FlowerCollection.Count == 0)
                 {
                     throw new Exception("Notice! No Flowers added to FlowerSet!");
                 }
-                Console.WriteLine(info);
 
             }
             catch (Exception e)
@@ -161,43 +161,37 @@ namespace FlowerShop
         }
         public void SortFlowersInFlowerSetByPrice()
         {
-            FlowerCollection.OrderBy(i => i.price);
+            FlowerCollection.OrderBy(i => i.Price);
 
             foreach (Flower i in FlowerCollection)
             {
-                Console.WriteLine("Sorted by price: " + i.Flowername + " price: " + i.price);
+                Console.WriteLine("Sorted by price: " + i.Flowername + " price: " + i.Price);
             }
         }
-        public void FindFlowerinFlowerSetByPrice(double minprice=0, double maxprice=Double.PositiveInfinity)
+        public void FindFlowerinFlowerSetByPrice(double minprice, double maxprice)
         {
-
-            List<Flower> ByPrice = FlowerCollection.FindAll(i => minprice <= i.price && i.price <= maxprice);
-            foreach (Flower i in ByPrice)
+            try
             {
-                Console.WriteLine("Flowers in price range: " + minprice + " - " + maxprice + " : " + i.Flowername + " " + i.price + "BYN");
+                if (FlowerCollection.Count == 0)
+                {
+                    throw new Exception("Notice! No Flowers added to FlowerSet!");
+                }
+                List<Flower> ByPrice = FlowerCollection.FindAll(i => minprice <= i.Price && i.Price <= maxprice);
+
+                if (ByPrice.Count == 0)
+                {
+                    throw new Exception("Notice! No flowers match this parameters!");
+                }
+
+                foreach (Flower i in ByPrice)
+                {
+                    Console.WriteLine("Flowers in price range: " + minprice + " - " + maxprice + " : " + i.Flowername + " " + i.Price + "BYN");
+                }
             }
-
-        }
-
-    }
-
-    [Serializable]
-    internal class Exeption : Exception
-    {
-        public Exeption()
-        {
-        }
-
-        public Exeption(string message) : base(message)
-        {
-        }
-
-        public Exeption(string message, Exception innerException) : base(message, innerException)
-        {
-        }
-
-        protected Exeption(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
+            catch (Exception e)
+            {
+                Console.WriteLine($"{e.Message}");
+            }
         }
     }
 }
