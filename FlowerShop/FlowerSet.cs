@@ -13,6 +13,7 @@ namespace FlowerShop
         void DisplayTotalPrice();
         //void DisplayTotalPrice(double pack);
         void AddFlowerToFlowerCollection(string className, int count, string flowername, int flowerlength);
+        void AddFlowerToFlowerCollection(string className, int count, string flowername);
         void DeleteFlowerFromFlowerCollection(string flower, int count, int flowerlength);
         void DeleteFlowerFromFlowerCollection(string flower, int count);
         void RemoveAllFlowersFromFlowerCollection();
@@ -80,11 +81,27 @@ namespace FlowerShop
             {
                 switch (className)
                 {
-                    case "Astra":
-                        fl = new Astra(flowername);
-                        break;
                     case "Rose":
                         fl = new Rose(flowername, flowerlength);
+                        break;
+                   
+                    default:
+                        throw new Exception("Flower type not found.");
+                }
+
+                this.FlowerCollection.Add(fl);
+            }
+        }
+        public void AddFlowerToFlowerCollection(string className, int count, string flowername)
+        {
+            Flower fl;
+
+            for (int i = 0; i < count; i++)
+            {
+                switch (className)
+                {
+                    case "Astra":
+                        fl = new Astra(flowername);
                         break;
                     case "Tulip":
                         fl = new Tulip(flowername);
