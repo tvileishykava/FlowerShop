@@ -24,8 +24,10 @@ namespace FlowerShop.MenuNamespace
 
         public void ShowMainMenu()
         {
+            
             Console.WriteLine(
                "\n\t FlowerSet Creation Main Menu" +
+               "\n\t___________________________________________________________________" +
                "\n\n\t To see list of available flowers - click on button 1" +
                "\n\t To add flower/flowers to Flowerset - click on button 2" +
                "\n\t To review your FlowerSet - click on button 3" +
@@ -43,11 +45,13 @@ namespace FlowerShop.MenuNamespace
                 switch (sign)
                 {
                     case "1":
+                        Console.Clear();
                         DisplayAvailableFlowers();
                         ShowMainMenu();
                         break;
 
                     case "2":
+                        Console.Clear();
                         Console.WriteLine("Flower Addition to Flower Set");
                         Console.WriteLine("Enter flower name:");
                         string fn = Convert.ToString(Console.ReadLine());
@@ -68,12 +72,14 @@ namespace FlowerShop.MenuNamespace
                         break;
 
                     case "3":
+                        Console.Clear();
                         Console.WriteLine("Review the Flower Set");
                         flSet.DisplayFlowerNamesAndPriceAndQuantity();
                         ShowMainMenu();
                         break;
 
                     case "4":
+                        Console.Clear();
                         Console.WriteLine("Range flowers by price");
                         if (!flSet.CheckFlowersInCollection())
                         {
@@ -89,12 +95,14 @@ namespace FlowerShop.MenuNamespace
                         break;
 
                     case "5":
+                        Console.Clear();
                         Console.WriteLine("Sort flowers in Flower Set by price");
                         flSet.SortFlowersInFlowerSetByPrice();
                         ShowMainMenu();
                         break;
 
                     case "6":
+                        Console.Clear();
                         if (!flSet.CheckFlowersInCollection())
                         {
                             ShowMainMenu();
@@ -121,12 +129,14 @@ namespace FlowerShop.MenuNamespace
                         break;
 
                     case "7":
+                        Console.Clear();
                         Console.WriteLine("All flowers removal");
                         flSet.RemoveAllFlowersFromFlowerCollection();
                         ShowMainMenu();
                         break;
 
                     case "8":
+                        Console.Clear();
                         Console.WriteLine("Review Total Price");
                         flSet.DisplayTotalPrice();
                         ShowMainMenu();
@@ -134,6 +144,8 @@ namespace FlowerShop.MenuNamespace
 
                     case "q":
                         break;
+
+                        
                 }
             }
             catch (Exception e)
@@ -141,6 +153,7 @@ namespace FlowerShop.MenuNamespace
                 Console.WriteLine(e.Message);
                 ShowMainMenu();
             }
+            
         }
         public void DisplayAvailableFlowers()
         {
