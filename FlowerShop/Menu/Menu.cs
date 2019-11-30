@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using FlowerShop.Interfaces;
+using FlowerShop.Flowers;
 
 namespace FlowerShop.MenuNamespace
 {
@@ -56,11 +57,15 @@ namespace FlowerShop.MenuNamespace
                         {
                             Console.WriteLine("Rose of what size do you want to add (10, 20, 30, 40, 50 are available):");
                             int l = Convert.ToInt32(Console.ReadLine());
-                            flSet.AddFlowerToFlowerCollection(fn, c, fn, l);
+                            Flower rose = new Rose(fn, l);
+                            flSet.AddFlowerToFlowerCollection(rose, c);
                         }
                         else
                         {
-                            flSet.AddFlowerToFlowerCollection(fn, c, fn);
+                            Type t = Type.GetType("FlowerShop.Flowers." + fn);
+
+                            Flower flowerclass = (Flower)Activator.CreateInstance(t, fn);
+                            flSet.AddFlowerToFlowerCollection(flowerclass, c);
                         }
                         Console.WriteLine("\tReporting:  " + c + " flower/flowers added");
                         ShowMainMenu();

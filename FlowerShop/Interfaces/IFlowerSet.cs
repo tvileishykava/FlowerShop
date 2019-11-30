@@ -10,8 +10,7 @@ namespace FlowerShop.Interfaces
     {
         void DisplayTotalPrice();
         //void DisplayTotalPrice(double pack);
-        void AddFlowerToFlowerCollection(string className, int count, string flowername, int flowerlength);
-        void AddFlowerToFlowerCollection(string className, int count, string flowername);
+        void AddFlowerToFlowerCollection(Flower flower, int count);
         void DeleteFlowerFromFlowerCollection(string flower, int count, int flowerlength);
         void DeleteFlowerFromFlowerCollection(string flower, int count);
         void RemoveAllFlowersFromFlowerCollection();

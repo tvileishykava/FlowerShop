@@ -8,7 +8,6 @@ namespace FlowerShop.Flowers
 {
     class Rose : Flower
     {
-        public static readonly string ClassName = "Rose";
         public Rose(string flowername, int flowerlength=25) : base(flowername) 
         {
             flowerlength_ = flowerlength;

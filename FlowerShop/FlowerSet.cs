@@ -57,47 +57,11 @@ namespace FlowerShop
                 Console.WriteLine($"{e.Message}");
             }
         }*/
-        public void AddFlowerToFlowerCollection(string className, int count, string flowername, int flowerlength=25)
+        public void AddFlowerToFlowerCollection(Flower flower, int count)
         {
-            Flower fl;
-
             for (int i = 0; i < count; i++)
             {
-                switch (className)
-                {
-                    case "Rose":
-                        fl = new Rose(flowername, flowerlength);
-                        break;
-                   
-                    default:
-                        throw new Exception("Flower type not found.");
-                }
-
-                this.FlowerCollection.Add(fl);
-            }
-        }
-        public void AddFlowerToFlowerCollection(string className, int count, string flowername)
-        {
-            Flower fl;
-
-            for (int i = 0; i < count; i++)
-            {
-                switch (className)
-                {
-                    case "Astra":
-                        fl = new Astra(flowername);
-                        break;
-                    case "Tulip":
-                        fl = new Tulip(flowername);
-                        break;
-                    case "Violet":
-                        fl = new Violet(flowername);
-                        break;
-                    default:
-                        throw new Exception("Flower type not found.");
-                }
-
-                this.FlowerCollection.Add(fl);
+                this.FlowerCollection.Add(flower);
             }
         }
         public void DeleteFlowerFromFlowerCollection(string className, int count, int flowerlength)
