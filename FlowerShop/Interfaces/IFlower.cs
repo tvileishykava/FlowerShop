@@ -9,5 +9,6 @@ namespace FlowerShop.Interfaces
     interface IFlower
     {
         void DisplayFlower();
+        Flower Clone();
     }
 }

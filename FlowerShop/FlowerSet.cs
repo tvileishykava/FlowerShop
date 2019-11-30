@@ -61,7 +61,7 @@ namespace FlowerShop
         {
             for (int i = 0; i < count; i++)
             {
-                this.FlowerCollection.Add(flower);
+                this.FlowerCollection.Add(flower.Clone());
             }
         }
         public void DeleteFlowerFromFlowerCollection(string className, int count, int flowerlength)

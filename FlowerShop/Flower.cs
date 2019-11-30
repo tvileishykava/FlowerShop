@@ -26,13 +26,16 @@ namespace FlowerShop
         {
             this.Flowername = flowername;
         }
-        
+
         //methods
         public virtual void DisplayFlower()
         {
             Console.WriteLine(Flowername + ": " + price + " BYN per item");
         }
-        //other methods
 
+        public Flower Clone()
+        {
+            return (Flower)this.MemberwiseClone();
+        }
     }
 }
