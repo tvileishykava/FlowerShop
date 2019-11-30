@@ -3,27 +3,11 @@ using System.Collections.Generic;
 using FlowerShop.Flowers;
 using System.Runtime.Serialization;
 using System.Linq;
+using FlowerShop.Interfaces;
 
 
 namespace FlowerShop
 {
-    //interface
-    public interface IFlowerSet
-    {
-        void DisplayTotalPrice();
-        //void DisplayTotalPrice(double pack);
-        void AddFlowerToFlowerCollection(string className, int count, string flowername, int flowerlength);
-        void AddFlowerToFlowerCollection(string className, int count, string flowername);
-        void DeleteFlowerFromFlowerCollection(string flower, int count, int flowerlength);
-        void DeleteFlowerFromFlowerCollection(string flower, int count);
-        void RemoveAllFlowersFromFlowerCollection();
-
-        //works now for flower collection, names with indexes
-        void DisplayFlowerNamesAndPriceAndQuantity();
-        void SortFlowersInFlowerSetByPrice();
-        void FindFlowerinFlowerSetByPrice(double minprice, double maxprice);
-        
-    }
     //class
     class FlowerSet : IFlowerSet
     {

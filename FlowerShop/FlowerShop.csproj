@@ -49,6 +49,9 @@
     <Compile Include="Flowers\Rose.cs" />
     <Compile Include="Flowers\Tulip.cs" />
     <Compile Include="Flowers\Violet.cs" />
+    <Compile Include="Interfaces\IFlower.cs" />
+    <Compile Include="Interfaces\IMenu.cs" />
+    <Compile Include="Interfaces\IFlowerSet.cs" />
     <Compile Include="Menu\Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

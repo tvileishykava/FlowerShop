@@ -4,15 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
+using FlowerShop.Interfaces;
 
 namespace FlowerShop.MenuNamespace
 {
-    public interface IMenu
-    {
-        void ShowMainMenu();
-        void DisplayAvailableFlowers();
-
-    }
     class Menu : IMenu
     {
         private FlowerSet flSet;
